@@ -7,6 +7,7 @@ import defaultErrHandler from './errHandler'
 import moviesRouter from './api/movies';   //import movies router
 import authenticate from './authenticate';
 import tvShowsRouter from './api/tvShows'; 
+import actorsRouter from './api/actors'; 
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use('/api/movies',authenticate,  moviesRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/movies', moviesRouter);
 app.use('/api/tvShows', tvShowsRouter);
+app.use('/api/actors', actorsRouter);
 app.use(defaultErrHandler);
 
 app.listen(port, () => {

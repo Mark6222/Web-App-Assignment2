@@ -16,10 +16,6 @@ const TVShowSchema = new Schema({
     vote_count: { type: Number },
     vote_average: { type: Number },
     origin_country: [{ type: String }],
-    number_of_episodes: { type: Number },
-    number_of_seasons: { type: Number },
-    status: { type: String },
-    tagline: { type: String },
 });
 
 TVShowSchema.statics.findByTVDBId = function (id) {

@@ -2,6 +2,7 @@ import showModel from './showModel';
 import asyncHandler from 'express-async-handler';
 import express from 'express';
 import {getTvShows} from '../tmdb-api';
+import {getTvShow} from '../tmdb-api';
 
 const router = express.Router();
 
@@ -39,6 +40,12 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.get('/tmdb/discover', asyncHandler(async (req, res) => {
     const upcomingTvShows = await getTvShows();
+    res.status(200).json(upcomingTvShows);
+}));
+
+router.get('/tmdb/tv/:id', asyncHandler(async (req, res) => {
+    const showId = req.params.id;
+    const upcomingTvShows = await getTvShow(showId);
     res.status(200).json(upcomingTvShows);
 }));
 

@@ -41,9 +41,9 @@ const App = () => {
         <AuthContextProvider>
           <MoviesContextProvider>
             <Routes>
-              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route element={<ProtectedRoutes />}>
+              <Route path="/" element={<HomePage />} />
                 <Route path="/reviews/form" element={<AddMovieReviewPage />} />
                 <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
                 <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
